@@ -20,6 +20,7 @@ def test_request_welcome(client):
     assert b"Welcome Page" in response.data
 
 
+
 def test_request_page_not_found(client):
     """This makes the index page"""
     response = client.get("/page/page5")
