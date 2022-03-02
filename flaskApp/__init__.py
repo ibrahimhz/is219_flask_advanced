@@ -1,4 +1,5 @@
 import os
+from flask import render_template
 from flask import Flask
 
 from flaskApp import db, auth, blog, simple_pages
@@ -55,3 +56,10 @@ def create_app(test_config=None):
 
 
 app = create_app()
+
+
+@app.errorhandler(404)
+# inbuilt function which takes error as parameter
+def not_found(e):
+    # defining function
+    return render_template("404.html")
